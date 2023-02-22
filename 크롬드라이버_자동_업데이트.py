@@ -1,4 +1,3 @@
-import time
 from selenium import webdriver
 import chromedriver_autoinstaller
 from user_agent import generate_user_agent
@@ -43,13 +42,10 @@ def chrome_driver():
         return driver
 
 
-driver = chrome_driver()
-
-# 링크 접속
-driver.get("https://github.com/mingeonho1/Crawler")
-
-# 3초 쉬기
-time.sleep(3)
-
-# 크롬드라이버 끄기
-driver.quit()
+# driver = chrome_driver()
+#
+# # 링크 접속
+# driver.get("https://github.com/mingeonho1/Crawler")
+#
+# # 크롬드라이버 끄기
+# driver.quit()
