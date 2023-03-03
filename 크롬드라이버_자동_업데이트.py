@@ -3,11 +3,12 @@ import chromedriver_autoinstaller
 from user_agent import generate_user_agent
 
 
-def chrome_driver():
+def chrome_driver(headless=True):
     options = webdriver.ChromeOptions()
 
     # headless
-    # options.add_argument("--headless")
+    if headless:
+        options.add_argument("--headless")
 
     # image 로딩 X
     options.add_argument('--blink-settings=imagesEnabled=false')
