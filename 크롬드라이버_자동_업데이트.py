@@ -3,15 +3,20 @@ import chromedriver_autoinstaller
 from user_agent import generate_user_agent
 
 
-def chrome_driver(headless=True):
+def chrome_driver(headless=True, image_enabled=False, maximized=False):
     options = webdriver.ChromeOptions()
 
     # headless
     if headless:
         options.add_argument("--headless")
+    
+    # 최대화
+    if maximized:
+        options.add_argument('--start-maximized')
 
     # image 로딩 X
-    options.add_argument('--blink-settings=imagesEnabled=false')
+    if not image_enabled:
+        options.add_argument('--blink-settings=imagesEnabled=false')
     
     # mobile버전으로 chrome을 띄움
     # options.add_experimental_option("mobileEmulation", {"deviceName": "iPhone X"})
