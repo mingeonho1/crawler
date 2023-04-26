@@ -8,7 +8,7 @@ def chrome_driver(headless=True, image_enabled=False, maximized=False):
 
     # headless
     if headless:
-        options.add_argument("--headless")
+        options.add_argument("--headless=new")
     
     # 최대화
     if maximized:
@@ -39,6 +39,12 @@ def chrome_driver(headless=True, image_enabled=False, maximized=False):
 
     # 시크릿 모드
     options.add_argument('--incognito')
+
+    # 네이버 카페 패스
+    # 경로는 잘 보고 설정 !
+    options.add_argument(r'--load-extension=C:\Users\user\AppData\Local\Google\Chrome\User'
+                         r' Data\Default\Extensions\jojlddfolpiejckahpinefdikdogenjg\1.6.0_0')
+    
     try:
         path = chromedriver_autoinstaller.install()
         driver = webdriver.Chrome(path, chrome_options=options)
