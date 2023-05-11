@@ -30,8 +30,8 @@ def full_page_screenshot(url, image_name):
         driver.implicitly_wait(3)
 
         # 전체 페이지 크기 취득
-        total_width = driver.execute_script("return document.body.offsetWidth")
-        total_height = driver.execute_script("return document.body.scrollHeight")
+        total_width = driver.execute_script("return document.body.parentNode.scrollWidth")
+        total_height = driver.execute_script("return document.body.parentNode.scrollHeight")
 
         # 브라우저 창 크기 조정
         driver.set_window_size(total_width, total_height)
