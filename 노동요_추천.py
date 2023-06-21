@@ -64,7 +64,10 @@ if __name__ == "__main__":
     while True:
         try:
             driver_manager = WebDriverManager()
-            song_rec = SongRecommendation("h3 > a#video-title", "SLACK_TOKEN", "SLACK_CHANNEL", driver_manager)
+            song_rec = SongRecommendation("h3 > a#video-title",
+                                          "SLACK_TOKEN",    # 자신의 슬랙 토큰
+                                          "SLACK_CHANNEL",  # 알림을 보내고 싶은 슬랙 체널 EX) #일반
+                                          driver_manager)
             song_rec.recommend_song()
             break
         except Exception as e:
