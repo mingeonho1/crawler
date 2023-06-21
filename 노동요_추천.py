@@ -9,7 +9,7 @@ from selenium.webdriver.common.keys import Keys
 
 class SongRecommendation:
     def __init__(self, a_tag, slack_token, slack_channel):
-        self._driver = chrome_driver(headless=False)
+        self._driver = chrome_driver()
         self._driver.implicitly_wait(10)
         self._domain = "https://www.youtube.com"
         self._keyword = random.choice(["노동요 추천", "일할 때 듣는 플리", "노동요"])
